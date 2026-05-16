@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alaska Servicios Integrales</title>
   <style>
-    /* ======== RESET Y CONFIGURACIÓN GENERAL ======== */
+    /* ======== RESET Y CONFIGURACIÓN GENERAL (BASE) ======== */
     * { box-sizing: border-box; scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f8fafc; color: #334155; }
+    
+    /* Fuente clara, fondo gris muy claro y textos secundarios oscuros (#2d3748) para contraste */
+    body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; background-color: #f1f5f9; color: #2d3748; line-height: 1.5; }
 
     /* ======== BARRA SUPERIOR (HEADER EN #0D317B) ======== */
     header { 
@@ -20,91 +22,125 @@
       position: sticky; 
       top: 0; 
       z-index: 1000;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
     }
     .branding { display: flex; align-items: center; gap: 10px; background-color: transparent !important; }
     header img { height: 40px; }
-    nav { background-color: transparent !important; }
-    nav a { color: #ffffff !important; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; background: transparent !important; }
+    nav { background-color: transparent !important; display: flex; }
+    nav a { color: #ffffff !important; text-decoration: none; margin: 0 12px; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; background: transparent !important; }
     nav a:hover { color: #38BDF8 !important; }
 
-    /* ======== SECCIÓN 1: PORTADA PRINCIPAL (BANNER) ======== */
+    /* ======== PÁGINA DE INICIO: PORTADA (BANNER CON FILTRO) ======== */
     .banner { 
       background: linear-gradient(rgba(13, 49, 123, 0.65), rgba(13, 49, 123, 0.65)), url('PORTADA.png') center/cover no-repeat; 
-      height: 500px; 
+      height: 480px; 
       display: flex; 
       align-items: center; 
       justify-content: center; 
+      padding: 0 20px;
     }
     .banner-content { 
       color: #ffffff; 
       text-align: center; 
-      max-width: 800px;
-      padding: 0 20px;
+      max-width: 750px;
     }
-    .banner-content h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-    .banner-content p { font-size: 1.3rem; margin-bottom: 0; font-weight: 400; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+    .banner-content h1 { font-size: 2.7rem; margin-bottom: 12px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.5); line-height: 1.2; }
+    .banner-content p { font-size: 1.2rem; margin-bottom: 0; font-weight: 400; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
 
-    /* ======== SECCIÓN 2: GRILLA DE SERVICIOS ======== */
-    .seccion-gris { background-color: #f1f5f9; padding: 60px 20px; text-align: center; }
+    /* ======== GRILLA DE SERVICIOS (MENÚ DE TARJETAS) ======== */
+    .seccion-gris { background-color: #f8fafc; padding: 60px 20px; text-align: center; }
     .titulo-seccion { color: #0D317B !important; font-size: 2rem; margin-bottom: 10px; font-weight: 700; }
-    .subtitulo-seccion { color: #475569; font-size: 1.1rem; margin-bottom: 40px; }
+    /* Texto secundario claro oscurecido */
+    .subtitulo-seccion { color: #4a5568; font-size: 1.05rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
     
-    .servicios-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: 0 auto; }
-    .tarjeta-servicio { background-color: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); width: 260px; padding: 25px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; border: 1px solid #e2e8f0; }
-    .tarjeta-servicio:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(13, 49, 123, 0.2); border-color: #0D317B !important; }
+    .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
+    .tarjeta-servicio { background-color: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); padding: 25px; text-align: center; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
+    .tarjeta-servicio:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(13, 49, 123, 0.15); border-color: #0D317B !important; }
     .tarjeta-servicio img { width: 65px; height: 65px; margin-bottom: 15px; object-fit: contain; }
-    .tarjeta-servicio h3 { color: #0D317B !important; margin: 0 0 10px 0; font-size: 1.25rem; font-weight: 700; }
-    .tarjeta-servicio p { color: #475569; font-size: 0.95rem; margin-bottom: 20px; height: 45px; display: flex; align-items: center; justify-content: center; }
+    .tarjeta-servicio h3 { color: #0D317B !important; margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 700; }
+    .tarjeta-servicio p { color: #4a5568; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5; flex-grow: 1; display: flex; align-items: center; justify-content: center; }
     
     .btn-detalles { background-color: transparent; color: #0D317B !important; border: 2px solid #0D317B !important; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; display: inline-block; }
     .btn-detalles:hover { background-color: #0D317B !important; color: #ffffff !important; }
 
-    /* PROMESA DE VALOR (SECCIÓN INTERMEDIA) */
+    /* PROMESA DE VALOR (SECCIÓN AZUL INTERMEDIA) */
     .promesa-valor { background-color: #0D317B !important; color: #ffffff !important; padding: 50px 20px; text-align: center; }
-    .promesa-contenedor { max-width: 750px; margin: 0 auto; }
-    .promesa-valor h2 { color: #ffffff !important; font-size: 2rem; margin: 0 0 12px 0; font-weight: 700; }
-    .promesa-valor p { font-size: 1.1rem; line-height: 1.6; color: #f1f5f9 !important; margin: 0; }
+    .promesa-contenedor { max-width: 700px; margin: 0 auto; }
+    .promesa-valor h2 { color: #ffffff !important; font-size: 1.9rem; margin: 0 0 12px 0; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+    .promesa-valor p { font-size: 1.1rem; line-height: 1.6; color: #E0F2FE !important; margin: 0; }
 
-    /* ======== SECCIÓN 3: BLOQUES DE DETALLE (CON TUS FOTOS REALES) ======== */
-    .detalles-seccion { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
-    .bloque-detalle { background-color: white; border-radius: 16px; padding: 35px; margin-bottom: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; scroll-margin-top: 90px; }
-    .bloque-detalle h2 { color: #0D317B !important; font-size: 1.7rem; margin: 0 0 20px 0; border-bottom: 3px solid #0D317B !important; padding-bottom: 8px; display: inline-block; font-weight: 700; }
+    /* ======== PÁGINA DE SERVICIOS: BLOQUES DE DETALLE (CON FOTOS REALES) ======== */
+    .detalles-seccion { padding: 80px 20px; max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+    .bloque-detalle { background-color: white; border-radius: 16px; padding: 35px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; scroll-margin-top: 90px; }
+    .bloque-detalle h2 { color: #0D317B !important; font-size: 1.6rem; margin: 0 0 15px 0; border-bottom: 3px solid #0D317B !important; padding-bottom: 8px; display: inline-block; font-weight: 700; }
     
-    .foto-servicio { width: 100%; max-height: 420px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-    .descripcion { font-size: 1.05rem; line-height: 1.6; color: #475569; margin-bottom: 25px; }
+    .foto-servicio { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    /* Letras claras pasadas a #2d3748 */
+    .descripcion { font-size: 1.05rem; line-height: 1.6; color: #2d3748; margin-bottom: 25px; }
     
     .acciones-servicio { display: flex; flex-direction: column; gap: 15px; }
     
-    /* BOTÓN WHATSAPP CORPORATIVO */
+    /* BOTÓN WHATSAPP CORPORATIVO EN #0D317B */
     .btn-presupuesto { background-color: #0D317B !important; color: #ffffff !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; text-align: center; transition: background-color 0.3s; display: inline-block; width: fit-content; box-shadow: 0 4px 6px -1px rgba(13, 49, 123, 0.3); border: none !important; }
     .btn-presupuesto:hover { background-color: #061b45 !important; }
 
     /* DESPLEGABLES FAQ */
-    details { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; }
+    details { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; cursor: pointer; }
     details[open] { background-color: #f0fdf4; border-color: #bbf7d0; }
     summary { font-weight: 600; color: #0D317B !important; cursor: pointer; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; background: transparent !important; }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "➕"; font-size: 0.8rem; color: #64748b; }
+    summary::after { content: "➕"; font-size: 0.8rem; color: #64748b; font-weight: bold; }
     details[open] summary::after { content: "➖"; }
-    details p { margin: 12px 0 0 0; font-size: 0.95rem; line-height: 1.5; color: #475569; background: transparent !important; }
+    details p { margin: 12px 0 0 0; font-size: 0.9rem; line-height: 1.5; color: #4a5568; background: transparent !important; }
 
-    /* ======== SECCIÓN 4: PIE DE PÁGINA / CONTACTO (EN #0D317B) ======== */
-    footer { 
-      background-color: #0D317B !important; 
-      color: #ffffff !important;
-      text-align: center; 
-      padding: 60px 20px; 
-      margin-top: 40px; 
-    }
-    footer h2 { font-size: 2rem; margin: 0 0 25px 0; color: #ffffff !important; font-weight: 700; background: transparent !important; }
-    .contacto-info { max-width: 600px; margin: 0 auto 30px auto; display: grid; gap: 15px; font-size: 1.05rem; text-align: center; color: #f1f5f9 !important; background: transparent !important; }
-    .contacto-info p { background: transparent !important; margin: 0; }
-    .contacto-info strong { color: #ffffff !important; }
+    /* ======== PÁGINA DE CONTACTO (FOOTER) ======== */
+    footer { background-color: #0D317B !important; color: #ffffff !important; text-align: center; padding: 60px 20px; border-top: 4px solid #38BDF8; }
+    footer h2 { font-size: 1.9rem; margin: 0 0 25px 0; color: #ffffff !important; font-weight: 700; background: transparent !important; }
+    .contacto-info { max-width: 600px; margin: 0 auto 30px auto; display: grid; gap: 15px; font-size: 1rem; text-align: center; color: #cbd5e1 !important; background: transparent !important; }
+    .contacto-info p { background: transparent !important; margin: 0; line-height: 1.5; }
+    .contacto-info strong { color: #ffffff !important; font-weight: 600; }
     footer a { color: #38BDF8 !important; text-decoration: none; font-weight: 600; transition: color 0.3s; background: transparent !important; }
     footer a:hover { color: #7DD3FC !important; }
     .horario { font-size: 0.9rem; color: #94a3b8 !important; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; background: transparent !important; }
     .horario p { background: transparent !important; }
+
+    /* ======== MEDIA QUERY PARA TELÉFONOS MÓVILES (OPTIMIZACIÓN) ======== */
+    @media (max-width: 768px) {
+      /* HEADER: Logo y menú se apilan o reducen */
+      header { padding: 10px 20px; flex-direction: column; text-align: center; gap: 10px; }
+      nav { flex-wrap: wrap; justify-content: center; }
+      nav a { margin: 5px; font-size: 0.9rem; }
+      header img { height: 35px; }
+
+      /* PORTADA: Títulos más pequeños */
+      .banner { height: 420px; }
+      .banner-content h1 { font-size: 2.1rem; }
+      .banner-content p { font-size: 1.1rem; }
+
+      /* GRILLA SERVICIOS: Tarjetas una por una */
+      .titulo-seccion { font-size: 1.7rem; }
+      .servicios-grid { grid-template-columns: 1fr; gap: 20px; }
+      .tarjeta-servicio { max-width: 100%; padding: 20px; }
+      .tarjeta-servicio p { height: auto; margin-bottom: 15px; }
+
+      /* PROMESA: Títulos reducidos */
+      .promesa-valor h2 { font-size: 1.6rem; }
+
+      /* DETALLES: Reducción de tamaños y apilamiento */
+      .detalles-seccion { padding: 50px 15px; gap: 30px; }
+      .bloque-detalle { padding: 25px 15px; }
+      .bloque-detalle h2 { font-size: 1.5rem; }
+      .foto-servicio { max-height: 280px; }
+      .descripcion { font-size: 1rem; }
+      
+      /* Botones ocupan más espacio táctil */
+      .btn-detalles, .btn-presupuesto { width: 100%; display: block; text-align: center; }
+      .btn-presupuesto { width: 100%; }
+
+      /* FOOTER */
+      footer h2 { font-size: 1.6rem; }
+      .contacto-info { font-size: 0.9rem; }
+    }
   </style>
 </head>
 <body>
@@ -123,19 +159,19 @@
   <section id="inicio" class="banner">
     <div class="banner-content">
       <h1>Experta en Alquileres Temporarios en Mendoza</h1>
-      <p>Prepara tu propiedad para el éxito</p>
+      <p>Prepara tu propiedad para el éxito operativo</p>
     </div>
   </section>
 
   <section class="seccion-gris">
     <h2 class="titulo-seccion">Nuestros Servicios Especializados</h2>
-    <p class="subtitulo-seccion">Soluciones integrales diseñadas exclusivamente para anfitriones y propietarios</p>
+    <p class="subtitulo-seccion">Soluciones integrales diseñadas exclusivamente para anfitriones y propietarios. Hacé clic para ver detalles y fotos reales.</p>
     
     <div class="servicios-grid">
       <div class="tarjeta-servicio">
         <img src="Chek-in.jpeg" alt="Check-in">
         <h3>Check-in</h3>
-        <p>Ingreso ágil y profesional para tus huéspedes.</p>
+        <p>Ingreso ágil, cordial y profesional para tus huéspedes.</p>
         <a href="#det-checkin" class="btn-detalles">Ver detalles y fotos</a>
       </div>
       <div class="tarjeta-servicio">
@@ -147,7 +183,7 @@
       <div class="tarjeta-servicio">
         <img src="recambio.png" alt="Recambio">
         <h3>Recambio</h3>
-        <p>Limpieza profunda y puesta a punto entre reservas.</p>
+        <p>Limpieza profunda hotelera y puesta a punto integral.</p>
         <a href="#det-recambio" class="btn-detalles">Ver detalles y fotos</a>
       </div>
       <div class="tarjeta-servicio">
@@ -165,7 +201,7 @@
       <div class="tarjeta-servicio">
         <img src="final-obra.jpeg" alt="Final de Obra">
         <h3>Final de Obra</h3>
-        <p>Limpieza técnica profunda post-construcción.</p>
+        <p>Limpieza técnica profunda pos-construcción.</p>
         <a href="#det-finalobra" class="btn-detalles">Ver detalles y fotos</a>
       </div>
     </div>
@@ -173,8 +209,8 @@
 
   <section class="promesa-valor">
     <div class="promesa-contenedor">
-      <h2>100% Confiabilidad Operativa</h2>
-      <p>Garantizamos que tu propiedad en Mendoza esté lista en la ventana horaria crítica del check-out al check-in (11:00 AM a 15:00 PM). Tu reputación y tus reseñas de 5 estrellas son nuestro compromiso diario.</p>
+      <h2>100% Confiabilidad Operativa en Mendoza</h2>
+      <p>Garantizamos que tu propiedad esté lista en la ventana horaria crítica del check-out al check-in (11:00 AM a 15:00 PM). Tu reputación es nuestro compromiso.</p>
     </div>
   </section>
 
@@ -182,78 +218,78 @@
     
     <div id="det-checkin" class="bloque-detalle">
       <h2>Servicio de Check-in</h2>
-      <img src="1.jpeg" alt="Habitación preparada para huéspedes" class="foto-servicio">
-      <p class="descripcion">Nos encargamos de recibir a tus huéspedes con calidez y profesionalismo. Realizamos la entrega de llaves, verificación de identidad, recorrido explicativo de las normas de la casa y recomendaciones locales de Mendoza para asegurar un inicio de estadía excelente.</p>
+      <img src="1.jpeg" alt="Habitación armada matrimonial para Check-in" class="foto-servicio">
+      <p class="descripcion">Recibimos a tus huéspedes con calidez y profesionalismo. Entrega de llaves, verificación de identidad, recorrido de normas y recomendaciones locales en Mendoza para un inicio de estadía excelente.</p>
       <div class="acciones-servicio">
-        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20solicitar%20un%20presupuesto%20para%20el%20servicio%20de%20Check-in" class="btn-presupuesto">📱 Solicitar Presupuesto Check-in</a>
+        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20solicitar%20un%20presupuesto%20para%20el%20servicio%20de%20Check-in" class="btn-presupuesto">📱 Solicitar Presupuesto</a>
         <details>
-          <summary>Preguntas frecuentes sobre Check-in</summary>
-          <p><strong>¿Qué pasa si el huésped llega tarde?</strong> Coordinamos guardias de espera y mantenemos comunicación fluida con el viajero para reportarte cualquier imprevisto en el horario de ingreso.</p>
+          <summary>Consultas frecuentes sobre Check-in</summary>
+          <p><strong>¿Tienen guardias ante demoras?</strong> Coordinamos guardias de espera y mantenemos comunicación fluida para reportarte imprevistos en el ingreso.</p>
         </details>
       </div>
     </div>
 
     <div id="det-checkout" class="bloque-detalle">
       <h2>Servicio de Check-out</h2>
-      <img src="3.jpeg" alt="Control e inspección de salida" class="foto-servicio">
-      <p class="descripcion">Gestionamos la salida de los huéspedes de forma eficiente. Realizamos la recepción de llaves, control rápido del estado general del inventario, chequeo de artefactos apagados y cierre seguro de la propiedad, reportando cualquier novedad de inmediato al propietario.</p>
+      <img src="3.jpeg" alt="Habitación doble preparada por Alaska" class="foto-servicio">
+      <p class="descripcion">Gestionamos la salida de forma eficiente. Recepción de llaves, control rápido de inventario, chequeo de artefactos apagados y cierre seguro, reportando novedades al propietario de inmediato.</p>
       <div class="acciones-servicio">
-        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20solicitar%20un%20presupuesto%20para%20el%20servicio%20de%20Check-out" class="btn-presupuesto">📱 Solicitar Presupuesto Check-out</a>
+        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20solicitar%20un%20presupuesto%20para%20el%20servicio%20de%20Check-out" class="btn-presupuesto">📱 Solicitar Presupuesto</a>
         <details>
-          <summary>Preguntas frecuentes sobre Check-out</summary>
-          <p><strong>¿Cómo reportan si hay un daño?</strong> Tomamos registro fotográfico al instante si se detecta un faltante o rotura y te enviamos el informe para que puedas gestionar la garantía en la plataforma de reservas.</p>
+          <summary>Preguntas sobre el control de salida</summary>
+          <p><strong>¿Cómo reportan si hay un daño?</strong> Tomamos registro fotográfico al instante si detectamos faltantes o roturas y te enviamos el informe para gestionar la garantía.</p>
         </details>
       </div>
     </div>
 
     <div id="det-recambio" class="bloque-detalle">
       <h2>Limpieza de Recambio</h2>
-      <img src="2.jpeg" alt="Puesta a punto de ambientes integrales" class="foto-servicio">
-      <p class="descripcion">Limpieza profunda y detallada bajo estándares hoteleros realizada estrictamente en la ventana crítica de tiempo. Reponemos los ambientes, desinfectamos superficies de alto contacto y dejamos el departamento reluciente, garantizando comentarios destacados en limpieza.</p>
+      <img src="2.jpeg" alt="Living comedor reluciente tras limpieza de recambio" class="foto-servicio">
+      <p class="descripcion">Limpieza detallada bajo estándares hoteleros estrictamente en la ventana crítica de tiempo. Reponemos ambientes, desinfectamos superficies de alto contacto y dejamos el departamento reluciente, garantizando 5 estrellas en limpieza.</p>
       <div class="acciones-servicio">
-        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20necesito%20cotizar%20una%20Limpieza%20de%20Recambio%20para%20mi%20alquiler%20temporario" class="btn-presupuesto">📱 Solicitar Presupuesto Recambio</a>
+        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20necesito%20cotizar%20una%20Limpieza%20de%20Recambio%20para%20mi%20alquiler%20temporario" class="btn-presupuesto">📱 Solicitar Presupuesto</a>
         <details>
-          <summary>Consultas sobre Insumos y Reposición</summary>
-          <p><strong>¿Los insumos están incluidos?</strong> El servicio base incluye materiales profesionales de limpieza. Opcionalmente, contamos con un Pack Anfitrión para gestionar elementos de cortesía como amenities de baño, papel higiénico o café.</p>
+          <summary>Consultas sobre insumos y amenities</summary>
+          <p><strong>¿Los insumos están incluidos?</strong> El servicio base incluye materiales profesionales de limpieza. Ofrecemos Pack Anfitrión opcional para reponer amenities de cortesía.</p>
         </details>
       </div>
     </div>
 
     <div id="det-lavanderia" class="bloque-detalle">
       <h2>Lavandería Premium de Blancos</h2>
-      <img src="4.jpeg" alt="Organización de ropa blanca hotelera" class="foto-servicio">
-      <p class="descripcion">Gestión integral de sábanas, toallas y mantelería. Retiramos la ropa blanca usada tras el check-out y entregamos un juego idéntico lavado, planchado y aromatizado profesionalmente, listo para vestir las camas en el mismo día.</p>
+      <img src="4.jpeg" alt="Gestión de blancos perfectamente doblados" class="foto-servicio">
+      <p class="descripcion">Gestión integral de blancos hoteleros. Retiramos ropa blanca usada tras el check-out y entregamos un juego idéntico lavado, planchado y aromatizado profesionalmente, listo para vestir las camas en el mismo día.</p>
       <div class="acciones-servicio">
-        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20me%20interesa%20contratar%20el%20servicio%20de%20Lavander%C3%ADa%20Premium%20de%20blancos" class="btn-presupuesto">📱 Solicitar Presupuesto Lavandería</a>
+        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20me%20interesa%20contratar%20el%20servicio%20de%20Lavander%C3%ADa%20Premium%20de%20blancos" class="btn-presupuesto">📱 Solicitar Presupuesto</a>
         <details>
-          <summary>Logística y Tiempos de Entrega</summary>
-          <p><strong>¿Cómo funciona el recambio de ropa blanca?</strong> Trabajamos con sistema de stock duplicado o coordinamos los retiros y entregas programadas según el flujo de reservas para que nunca te quedes sin stock en la propiedad.</p>
+          <summary>Logística y tiempos de recambio</summary>
+          <p><strong>¿Cómo funciona el stock?</strong> Trabajamos con sistema de stock duplicado o coordinamos entregas programadas según el flujo de reservas para que nunca te quedes sin stock.</p>
         </details>
       </div>
     </div>
 
     <div id="det-mantenimiento" class="bloque-detalle">
       <h2>Mantenimiento y Asistencia Técnica</h2>
-      <img src="6.jpeg" alt="Revisión de instalaciones fijas de departamentos" class="foto-servicio">
-      <p class="descripcion">Resolución de imprevistos técnicos, cerrajería, plomería y reparaciones eléctricas del hogar. Integramos soluciones inmediatas para que un foco quemado, un enchufe roto o un desperfecto menor no arruine la experiencia del próximo viajero ni cause quejas.</p>
+      <img src="6.jpeg" alt="Revisión técnica de instalaciones del departamento" class="foto-servicio">
+      <p class="descripcion">Resolución de imprevistos técnicos, cerrajería, plomería y reparaciones eléctricas. Integramos soluciones inmediatas para que un desperfecto menor no cause quejas ni arruine la experiencia del viajero.</p>
       <div class="acciones-servicio">
-        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20necesito%20asistencia%20técnica%20o%20mantenimiento%20para%20una%20propiedad" class="btn-presupuesto">📱 Solicitar Presupuesto Mantenimiento</a>
+        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20necesito%20asistencia%20técnica%20o%20mantenimiento%20para%20una%20propiedad" class="btn-presupuesto">📱 Solicitar Presupuesto</a>
         <details>
-          <summary>Guardia de Emergencias y Cobertura</summary>
-          <p><strong>¿Tienen disponibilidad ante urgencias?</strong> Brindamos un esquema de Guardia Técnica coordinada para dar respuesta prioritaria a imprevistos críticos mientras el departamento está ocupado.</p>
+          <summary>Guardia de Emergencia Operativa</summary>
+          <p><strong>¿Tienen disponibilidad técnica?</strong> Brindamos esquema de Guardia Técnica coordinada para respuestas prioritarias a imprevistos críticos con el depto ocupado.</p>
         </details>
       </div>
     </div>
 
     <div id="det-finalobra" class="bloque-detalle">
       <h2>Limpieza de Final de Obra</h2>
-      <img src="10.jpeg" alt="Limpieza técnica profunda pos-construcción" class="foto-servicio">
-      <p class="descripcion">Limpieza técnica exhaustiva diseñada para constructoras, desarrolladores o inversores que acaban de terminar una obra o remodelación. Eliminamos por completo restos de pintura, manchas de cemento, polvo de yeso en rieles y aberturas, dejando la propiedad lista para habitar o amoblar.</p>
+      <img src="10.jpeg" alt="Terminación brillante y remoción de materiales en baño" class="foto-servicio">
+      <p class="descripcion">Limpieza técnica exhaustiva para pos-construcción. Eliminamos pintura, cemento y polvo de yeso en rieles y aberturas, dejando la propiedad lista para habitar o amoblar.</p>
       <div class="acciones-servicio">
-        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20un%20presupuesto%20para%20una%20limpieza%20técnica%20de%20Final%20de%20Obra" class="btn-presupuesto">📱 Solicitar Presupuesto Final de Obra</a>
+        <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20un%20presupuesto%20para%20una%20limpieza%20técnica%20de%20Final%20de%20Obra" class="btn-presupuesto">📱 Solicitar Presupuesto</a>
         <details>
-          <summary>Tratamientos Especiales de Superficies</summary>
-          <p><strong>¿Qué incluye la limpieza técnica?</strong> Incluye remoción minuciosa de restos de materiales en aberturas, limpieza profunda de vidrios en altura y curado/lavado de pisos con maquinaria idónea según la superficie.</p>
+          <summary>Limpieza profunda técnica</summary>
+          <p><strong>¿Qué incluye la limpieza técnica?</strong> Remoción minuciosa en aberturas, vidrios en altura y curado/lavado de pisos con maquinaria idónea según la superficie.</p>
         </details>
       </div>
     </div>
@@ -261,16 +297,16 @@
   </section>
 
   <footer id="contacto">
-    <h2>Contacto e Informes</h2>
+    <h2>Contacto e Informes Operativos</h2>
     <div class="contacto-info">
       <p>📍 <strong>Zona de Cobertura:</strong> Mendoza, Argentina y alrededores</p>
-      <p>📞 <strong>Teléfono Directo:</strong> <a href="tel:+5492615579472">+54 9 2615 57-9472</a></p>
+      <p>📞 <strong>Llamada Directa:</strong> <a href="tel:+5492615579472">+54 9 2615 57-9472</a></p>
       <p>💬 <strong>WhatsApp Comercial:</strong> <a href="https://wa.me/5492615579472?text=Hola%20Alaska%20Servicios,%20me%20comunico%20desde%20la%20p%C3%A1gina%20web%20para%20hacer%20una%20consulta.">Iniciar Chat Directo</a></p>
       <p>📧 <strong>Correo Institucional:</strong> <a href="mailto:alaska.servicios.mendoza@gmail.com">alaska.servicios.mendoza@gmail.com</a></p>
     </div>
     <div class="horario">
-      <p>Alaska Servicios Integrales © 2026 — Operatividad Profesional para Alquileres Temporarios</p>
-      <p style="font-size: 0.8rem; color: #94a3b8 !important; margin-top: 5px;">Horario de Coordinación General: Lunes a Sábados de 08:00 hs a 20:00 hs</p>
+      <p>Alaska Servicios Integrales — Operatividad Profesional para Alquileres Temporarios</p>
+      <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 5px;">Coordinación Operativa General: Lunes a Sábados de 08:00 hs a 20:00 hs</p>
     </div>
   </footer>
 
