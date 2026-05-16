@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +12,7 @@
 
     /* ======== ENCABEZADO (BARRA DE NAVEGACIÓN EN #0D317B) ======== */
     header { 
-      background-color: #0D317B; /* Tu nuevo azul corporativo */
+      background-color: #0D317B; 
       color: #ffffff; 
       padding: 15px 30px; 
       display: flex; 
@@ -25,11 +26,10 @@
     .branding { display: flex; align-items: center; gap: 10px; }
     header img { height: 40px; }
     nav a { color: #ffffff; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
-    nav a:hover { color: #38BDF8; } /* Celeste brillante para el efecto hover */
+    nav a:hover { color: #38BDF8; }
 
     /* ======== SECCIÓN 1: INICIO (BANNER CON FILTRO AZUL) ======== */
     .banner { 
-      /* Capa con tu azul #0D317B y transparencia para que combine con la foto de fondo */
       background: linear-gradient(rgba(13, 49, 123, 0.65), rgba(13, 49, 123, 0.65)), url('PORTADA.png') center/cover no-repeat; 
       height: 500px; 
       display: flex; 
@@ -63,7 +63,7 @@
     /* PROMESA DE VALOR INTERMEDIA (FONDO #0D317B) */
     .promesa-valor { background-color: #0D317B; color: #ffffff; padding: 50px 20px; text-align: center; }
     .promesa-contenedor { max-width: 750px; margin: 0 auto; }
-    .promesa-valor h2 { color: #E0F2FE; font-size: 2rem; margin: 0 0 12px 0; font-weight: 700; } /* Celeste hielo hiper legible */
+    .promesa-valor h2 { color: #E0F2FE; font-size: 2rem; margin: 0 0 12px 0; font-weight: 700; }
     .promesa-valor p { font-size: 1.1rem; line-height: 1.6; color: #f1f5f9; margin: 0; }
 
     /* ======== SECCIÓN 3: PÁGINA DETALLE DE SERVICIOS ======== */
@@ -71,14 +71,14 @@
     .bloque-detalle { background-color: white; border-radius: 16px; padding: 35px; margin-bottom: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; scroll-margin-top: 90px; }
     .bloque-detalle h2 { color: #0D317B; font-size: 1.7rem; margin: 0 0 20px 0; border-bottom: 3px solid #38BDF8; padding-bottom: 8px; display: inline-block; }
     
-    .foto-servicio { width: 100%; max-height: 380px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .foto-servicio { width: 100%; max-height: 420px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
     .descripcion { font-size: 1.05rem; line-height: 1.6; color: #475569; margin-bottom: 25px; }
     
     .acciones-servicio { display: flex; flex-direction: column; gap: 15px; }
     
     /* Botón destacado WhatsApp usando tu color corporativo */
     .btn-presupuesto { background-color: #0D317B; color: #ffffff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; text-align: center; transition: background-color 0.3s; display: inline-block; width: fit-content; box-shadow: 0 4px 6px -1px rgba(13, 49, 123, 0.2); }
-    .btn-presupuesto:hover { background-color: #071D4A; } /* Un azul más oscuro al pasar el mouse */
+    .btn-presupuesto:hover { background-color: #071D4A; }
 
     /* Menús Desplegables de Consultas */
     details { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; }
@@ -120,7 +120,7 @@
 
   <section class="seccion-gris">
     <h2 class="titulo-seccion">Nuestros Servicios Especializados</h2>
-    <p class="subtitulo-seccion">SolSolutions integrales diseñadas exclusivamente para anfitriones y propietarios</p>
+    <p class="subtitulo-seccion">Soluciones integrales diseñadas exclusivamente para anfitriones y propietarios</p>
     
     <div class="servicios-grid">
       <div class="tarjeta-servicio">
@@ -173,7 +173,7 @@
     
     <div id="det-checkin" class="bloque-detalle">
       <h2>Servicio de Check-in</h2>
-      <img src="1.jpeg" alt="Habitación preparada para Check-in por Alaska" class="foto-servicio">
+      <img src="1.jpeg" alt="Habitación armada matrimonial para Check-in" class="foto-servicio">
       <p class="descripcion">Nos encargamos de recibir a tus huéspedes con calidez y profesionalismo. Realizamos la entrega de llaves, verificación de identidad, recorrido explicativo de las normas de la casa y recomendaciones locales de Mendoza para asegurar un inicio de estadía excelente.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20solicitar%20un%20presupuesto%20para%20el%20servicio%20de%20Check-in" class="btn-presupuesto">📱 Solicitar Presupuesto Check-in</a>
@@ -186,7 +186,7 @@
 
     <div id="det-checkout" class="bloque-detalle">
       <h2>Servicio de Check-out</h2>
-      <img src="3.jpeg" alt="Control de propiedad y Check-out Alaska" class="foto-servicio">
+      <img src="3.jpeg" alt="Habitación doble preparada por Alaska" class="foto-servicio">
       <p class="descripcion">Gestionamos la salida de los huéspedes de forma eficiente. Realizamos la recepción de llaves, control rápido del estado general del inventario, chequeo de artefactos apagados y cierre seguro de la propiedad, reportando cualquier novedad de inmediato al propietario.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20solicitar%20un%20presupuesto%20para%20el%20servicio%20de%20Check-out" class="btn-presupuesto">📱 Solicitar Presupuesto Check-out</a>
@@ -199,7 +199,7 @@
 
     <div id="det-recambio" class="bloque-detalle">
       <h2>Limpieza de Recambio</h2>
-      <img src="2.jpeg" alt="Comedor y living impecable preparado por Alaska" class="foto-servicio">
+      <img src="2.jpeg" alt="Living comedor reluciente tras limpieza de recambio" class="foto-servicio">
       <p class="descripcion">Limpieza profunda y detallada bajo estándares hoteleros realizada estrictamente en la ventana crítica de tiempo. Reponemos los ambientes, desinfectamos superficies de alto contacto y dejamos el departamento reluciente, garantizando comentarios destacados en limpieza.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20necesito%20cotizar%20una%20Limpieza%20de%20Recambio%20para%20mi%20alquiler%20temporario" class="btn-presupuesto">📱 Solicitar Presupuesto Recambio</a>
@@ -212,7 +212,7 @@
 
     <div id="det-lavanderia" class="bloque-detalle">
       <h2>Lavandería Premium de Blancos</h2>
-      <img src="4.jpeg" alt="Gestión y orden de blancos premium Alaska" class="foto-servicio">
+      <img src="4.jpeg" alt="Blanco y toallas perfectamente dobladas y perfumadas" class="foto-servicio">
       <p class="descripcion">Gestión integral de sábanas, toallas y mantelería. Retiramos la ropa blanca usada tras el check-out y entregamos un juego idéntico lavado, planchado y aromatizado profesionalmente, listo para vestir las camas en el mismo día.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20me%20interesa%20contratar%20el%20servicio%20de%20Lavander%C3%ADa%20Premium%20de%20blancos" class="btn-presupuesto">📱 Solicitar Presupuesto Lavandería</a>
@@ -225,6 +225,7 @@
 
     <div id="det-mantenimiento" class="bloque-detalle">
       <h2>Mantenimiento y Asistencia Técnica</h2>
+      <img src="6.jpeg" alt="Revisión de equipamientos de cocina y hogar" class="foto-servicio">
       <p class="descripcion">Resolución de imprevistos técnicos, cerrajería, plomería y reparaciones eléctricas del hogar. Integramos soluciones inmediatas para que un foco quemado, un enchufe roto o un desperfecto menor no arruine la experiencia del próximo viajero ni cause quejas.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20necesito%20asistencia%20técnica%20o%20mantenimiento%20para%20una%20propiedad" class="btn-presupuesto">📱 Solicitar Presupuesto Mantenimiento</a>
@@ -237,6 +238,7 @@
 
     <div id="det-finalobra" class="bloque-detalle">
       <h2>Limpieza de Final de Obra</h2>
+      <img src="10.jpeg" alt="Terminación brillante y remoción de restos de materiales en baño" class="foto-servicio">
       <p class="descripcion">Limpieza técnica exhaustiva diseñada para constructoras, desarrolladores o inversores que acaban de terminar una obra o remodelación. Eliminamos por completo restos de pintura, manchas de cemento, polvo de yeso en rieles y aberturas, dejando la propiedad lista para habitar o amoblar.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20un%20presupuesto%20para%20una%20limpieza%20técnica%20de%20Final%20de%20Obra" class="btn-presupuesto">📱 Solicitar Presupuesto Final de Obra</a>
