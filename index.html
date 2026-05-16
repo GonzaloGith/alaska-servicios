@@ -9,10 +9,10 @@
     * { box-sizing: border-box; scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f8fafc; color: #334155; }
 
-    /* ======== ENCABEZADO (MENÚ NAVEGACIÓN FIJO) ======== */
+    /* ======== ENCABEZADO (BARRA DE NAVEGACIÓN EN #0D317B) ======== */
     header { 
-      background-color: #020617; 
-      color: white; 
+      background-color: #0D317B; /* Tu nuevo azul corporativo */
+      color: #ffffff; 
       padding: 15px 30px; 
       display: flex; 
       justify-content: space-between; 
@@ -20,82 +20,82 @@
       position: sticky; 
       top: 0; 
       z-index: 1000;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
     }
     .branding { display: flex; align-items: center; gap: 10px; }
     header img { height: 40px; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
-    nav a:hover { color: #38BDF8; }
+    nav a { color: #ffffff; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+    nav a:hover { color: #38BDF8; } /* Celeste brillante para el efecto hover */
 
-    /* ======== SECCIÓN 1: INICIO (BANNER PRINCIPAL) ======== */
+    /* ======== SECCIÓN 1: INICIO (BANNER CON FILTRO AZUL) ======== */
     .banner { 
-      background: linear-gradient(rgba(2, 6, 23, 0.5), rgba(2, 6, 23, 0.5)), url('PORTADA.png') center/cover no-repeat; 
+      /* Capa con tu azul #0D317B y transparencia para que combine con la foto de fondo */
+      background: linear-gradient(rgba(13, 49, 123, 0.65), rgba(13, 49, 123, 0.65)), url('PORTADA.png') center/cover no-repeat; 
       height: 500px; 
       display: flex; 
       align-items: center; 
       justify-content: center; 
     }
     .banner-content { 
-      color: white; 
+      color: #ffffff; 
       text-align: center; 
       max-width: 800px;
       padding: 0 20px;
     }
-    .banner-content h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
-    .banner-content p { font-size: 1.3rem; margin-bottom: 0; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+    .banner-content h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+    .banner-content p { font-size: 1.3rem; margin-bottom: 0; font-weight: 400; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
 
     /* ======== SECCIÓN 2: GRID DE TARJETAS (RESUMEN) ======== */
     .seccion-gris { background-color: #f1f5f9; padding: 60px 20px; text-align: center; }
-    .titulo-seccion { color: #020617; font-size: 2rem; margin-bottom: 10px; font-weight: 700; }
-    .subtitulo-seccion { color: #64748b; font-size: 1.1rem; margin-bottom: 40px; }
+    .titulo-seccion { color: #0D317B; font-size: 2rem; margin-bottom: 10px; font-weight: 700; }
+    .subtitulo-seccion { color: #475569; font-size: 1.1rem; margin-bottom: 40px; }
     
     .servicios-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: 0 auto; }
     .tarjeta-servicio { background-color: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); width: 260px; padding: 25px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; border: 1px solid #e2e8f0; }
-    .tarjeta-servicio:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+    .tarjeta-servicio:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(13, 49, 123, 0.15); border-color: #38BDF8; }
     .tarjeta-servicio img { width: 65px; height: 65px; margin-bottom: 15px; }
-    .tarjeta-servicio h3 { color: #020617; margin: 0 0 10px 0; font-size: 1.25rem; }
-    .tarjeta-servicio p { color: #64748b; font-size: 0.95rem; margin-bottom: 20px; height: 45px; display: flex; align-items: center; justify-content: center; }
+    .tarjeta-servicio h3 { color: #0D317B; margin: 0 0 10px 0; font-size: 1.25rem; }
+    .tarjeta-servicio p { color: #475569; font-size: 0.95rem; margin-bottom: 20px; height: 45px; display: flex; align-items: center; justify-content: center; }
     
-    .btn-detalles { background-color: transparent; color: #0ea5e9; border: 2px solid #0ea5e9; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; display: inline-block; }
-    .btn-detalles:hover { background-color: #0ea5e9; color: white; }
+    .btn-detalles { background-color: transparent; color: #0D317B; border: 2px solid #0D317B; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; display: inline-block; }
+    .btn-detalles:hover { background-color: #0D317B; color: #ffffff; }
 
-    /* PROMESA DE VALOR INTERMEDIA */
-    .promesa-valor { background-color: #020617; color: white; padding: 50px 20px; text-align: center; }
+    /* PROMESA DE VALOR INTERMEDIA (FONDO #0D317B) */
+    .promesa-valor { background-color: #0D317B; color: #ffffff; padding: 50px 20px; text-align: center; }
     .promesa-contenedor { max-width: 750px; margin: 0 auto; }
-    .promesa-valor h2 { color: #38BDF8; font-size: 2rem; margin: 0 0 12px 0; font-weight: 700; }
-    .promesa-valor p { font-size: 1.1rem; line-height: 1.6; color: #cbd5e1; margin: 0; }
+    .promesa-valor h2 { color: #E0F2FE; font-size: 2rem; margin: 0 0 12px 0; font-weight: 700; } /* Celeste hielo hiper legible */
+    .promesa-valor p { font-size: 1.1rem; line-height: 1.6; color: #f1f5f9; margin: 0; }
 
-    /* ======== SECCIÓN 3: PÁGINA DETALLE DE SERVICIOS (CON FOTOS REALES) ======== */
+    /* ======== SECCIÓN 3: PÁGINA DETALLE DE SERVICIOS ======== */
     .detalles-seccion { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
     .bloque-detalle { background-color: white; border-radius: 16px; padding: 35px; margin-bottom: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; scroll-margin-top: 90px; }
-    .bloque-detalle h2 { color: #020617; font-size: 1.7rem; margin: 0 0 20px 0; border-bottom: 3px solid #38BDF8; padding-bottom: 8px; display: inline-block; }
+    .bloque-detalle h2 { color: #0D317B; font-size: 1.7rem; margin: 0 0 20px 0; border-bottom: 3px solid #38BDF8; padding-bottom: 8px; display: inline-block; }
     
-    /* Manejo responsivo y estético de tus fotos reales */
     .foto-servicio { width: 100%; max-height: 380px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
     .descripcion { font-size: 1.05rem; line-height: 1.6; color: #475569; margin-bottom: 25px; }
     
     .acciones-servicio { display: flex; flex-direction: column; gap: 15px; }
     
-    /* Botón destacado WhatsApp */
-    .btn-presupuesto { background-color: #38BDF8; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; text-align: center; transition: background-color 0.3s; display: inline-block; width: fit-content; box-shadow: 0 4px 6px -1px rgba(56, 189, 248, 0.2); }
-    .btn-presupuesto:hover { background-color: #0ea5e9; }
+    /* Botón destacado WhatsApp usando tu color corporativo */
+    .btn-presupuesto { background-color: #0D317B; color: #ffffff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; text-align: center; transition: background-color 0.3s; display: inline-block; width: fit-content; box-shadow: 0 4px 6px -1px rgba(13, 49, 123, 0.2); }
+    .btn-presupuesto:hover { background-color: #071D4A; } /* Un azul más oscuro al pasar el mouse */
 
     /* Menús Desplegables de Consultas */
     details { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; }
     details[open] { background-color: #f0fdf4; border-color: #bbf7d0; }
-    summary { font-weight: 600; color: #020617; cursor: pointer; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+    summary { font-weight: 600; color: #0D317B; cursor: pointer; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
     summary::-webkit-details-marker { display: none; }
     summary::after { content: "➕"; font-size: 0.8rem; color: #64748b; }
     details[open] summary::after { content: "➖"; }
     details p { margin: 12px 0 0 0; font-size: 0.95rem; line-height: 1.5; color: #475569; }
 
-    /* ======== SECCIÓN 4: CONTACTO (FOOTER OPTIMIZADO) ======== */
-    footer { background-color: #020617; color: white; text-align: center; padding: 60px 20px; border-top: 4px solid #38BDF8; }
-    footer h2 { font-size: 2rem; margin: 0 0 25px 0; }
-    .contacto-info { max-width: 600px; margin: 0 auto 30px auto; display: grid; gap: 15px; font-size: 1.05rem; text-align: center; }
+    /* ======== SECCIÓN 4: CONTACTO (FOOTER EN #0D317B) ======== */
+    footer { background-color: #0D317B; color: #ffffff; text-align: center; padding: 60px 20px; border-top: 4px solid #38BDF8; }
+    footer h2 { font-size: 2rem; margin: 0 0 25px 0; color: #ffffff; }
+    .contacto-info { max-width: 600px; margin: 0 auto 30px auto; display: grid; gap: 15px; font-size: 1.05rem; text-align: center; color: #f1f5f9; }
     footer a { color: #38BDF8; text-decoration: none; font-weight: 600; transition: color 0.3s; }
-    footer a:hover { color: #0ea5e9; }
-    .horario { font-size: 0.9rem; color: #94a3b8; margin-top: 10px; border-top: 1px solid #1e293b; padding-top: 20px; }
+    footer a:hover { color: #7DD3FC; }
+    .horario { font-size: 0.9rem; color: #94a3b8; margin-top: 10px; border-top: 1px solid #1e40af; padding-top: 20px; }
   </style>
 </head>
 <body>
@@ -120,7 +120,7 @@
 
   <section class="seccion-gris">
     <h2 class="titulo-seccion">Nuestros Servicios Especializados</h2>
-    <p class="subtitulo-seccion">Soluciones integrales diseñadas exclusivamente para anfitriones y propietarios</p>
+    <p class="subtitulo-seccion">SolSolutions integrales diseñadas exclusivamente para anfitriones y propietarios</p>
     
     <div class="servicios-grid">
       <div class="tarjeta-servicio">
@@ -258,8 +258,8 @@
       <p>📧 <strong>Correo Institucional:</strong> <a href="mailto:alaska.servicios.mendoza@gmail.com">alaska.servicios.mendoza@gmail.com</a></p>
     </div>
     <div class="horario">
-      <p>Alaska Servicios Integrales © 2026 — Atención Operativa para Alquileres Temporarios</p>
-      <p style="font-size: 0.8rem; color: #64748b; margin-top: 5px;">Horario de Coordinación General: Lunes a Sábados de 08:00 hs a 20:00 hs</p>
+      <p>Alaska Servicios Integrales © 2026 — Operatividad Profesional para Alquileres Temporarios</p>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">Horario de Coordinación General: Lunes a Sábados de 08:00 hs a 20:00 hs</p>
     </div>
   </footer>
 
