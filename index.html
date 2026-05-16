@@ -9,10 +9,13 @@
     * { box-sizing: border-box; scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f8fafc; color: #334155; }
 
-    /* ======== ENCABEZADO (BARRA DE NAVEGACIÓN EN #0D317B) ======== */
+    /* ======== ENCABEZADO REAL (FORZADO A #0D317B) ======== */
+    header, nav, .branding {
+      background-color: #0D317B !important;
+    }
     header { 
-      background-color: #0D317B !important; /* Forzado al azul que pasaste */
-      color: #ffffff; 
+      background-color: #0D317B !important;
+      color: #ffffff !important; 
       padding: 15px 30px; 
       display: flex; 
       justify-content: space-between; 
@@ -27,10 +30,9 @@
     nav a { color: #ffffff !important; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
     nav a:hover { color: #38BDF8 !important; }
 
-    /* ======== SECCIÓN 1: INICIO (BANNER CON FILTRO AZUL REAL) ======== */
+    /* ======== SECCIÓN 1: INICIO (BANNER PRINCIPAL) ======== */
     .banner { 
-      /* Filtro calibrado con tu azul #0D317B para unificar la portada */
-      background: linear-gradient(rgba(13, 49, 123, 0.7), rgba(13, 49, 123, 0.7)), url('PORTADA.png') center/cover no-repeat; 
+      background: linear-gradient(rgba(13, 49, 123, 0.65), rgba(13, 49, 123, 0.65)), url('PORTADA.png') center/cover no-repeat; 
       height: 500px; 
       display: flex; 
       align-items: center; 
@@ -45,14 +47,14 @@
     .banner-content h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
     .banner-content p { font-size: 1.3rem; margin-bottom: 0; font-weight: 400; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
 
-    /* ======== SECCIÓN 2: GRID DE TARJETAS (RESUMEN) ======== */
+    /* ======== SECCIÓN 2: GRID DE TARJETAS ======== */
     .seccion-gris { background-color: #f1f5f9; padding: 60px 20px; text-align: center; }
     .titulo-seccion { color: #0D317B !important; font-size: 2rem; margin-bottom: 10px; font-weight: 700; }
     .subtitulo-seccion { color: #475569; font-size: 1.1rem; margin-bottom: 40px; }
     
     .servicios-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: 0 auto; }
     .tarjeta-servicio { background-color: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); width: 260px; padding: 25px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; border: 1px solid #e2e8f0; }
-    .tarjeta-servicio:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(13, 49, 123, 0.2); border-color: #0D317B; }
+    .tarjeta-servicio:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(13, 49, 123, 0.2); border-color: #0D317B !important; }
     .tarjeta-servicio img { width: 65px; height: 65px; margin-bottom: 15px; object-fit: contain; }
     .tarjeta-servicio h3 { color: #0D317B !important; margin: 0 0 10px 0; font-size: 1.25rem; font-weight: 700; }
     .tarjeta-servicio p { color: #475569; font-size: 0.95rem; margin-bottom: 20px; height: 45px; display: flex; align-items: center; justify-content: center; }
@@ -60,24 +62,24 @@
     .btn-detalles { background-color: transparent; color: #0D317B !important; border: 2px solid #0D317B !important; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; display: inline-block; }
     .btn-detalles:hover { background-color: #0D317B !important; color: #ffffff !important; }
 
-    /* PROMESA DE VALOR INTERMEDIA (FONDO #0D317B) */
-    .promesa-valor { background-color: #0D317B !important; color: #ffffff; padding: 50px 20px; text-align: center; }
+    /* PROMESA DE VALOR INTERMEDIA */
+    .promesa-valor { background-color: #0D317B !important; color: #ffffff !important; padding: 50px 20px; text-align: center; }
     .promesa-contenedor { max-width: 750px; margin: 0 auto; }
-    .promesa-valor h2 { color: #ffffff !important; font-size: 2rem; margin: 0 0 12px 0; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
-    .promesa-valor p { font-size: 1.1rem; line-height: 1.6; color: #f1f5f9; margin: 0; }
+    .promesa-valor h2 { color: #ffffff !important; font-size: 2rem; margin: 0 0 12px 0; font-weight: 700; }
+    .promesa-valor p { font-size: 1.1rem; line-height: 1.6; color: #f1f5f9 !important; margin: 0; }
 
     /* ======== SECCIÓN 3: PÁGINA DETALLE DE SERVICIOS ======== */
     .detalles-seccion { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
     .bloque-detalle { background-color: white; border-radius: 16px; padding: 35px; margin-bottom: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; scroll-margin-top: 90px; }
-    .bloque-detalle h2 { color: #0D317B !important; font-size: 1.7rem; margin: 0 0 20px 0; border-bottom: 3px solid #0D317B; padding-bottom: 8px; display: inline-block; font-weight: 700; }
+    .bloque-detalle h2 { color: #0D317B !important; font-size: 1.7rem; margin: 0 0 20px 0; border-bottom: 3px solid #0D317B !important; padding-bottom: 8px; display: inline-block; font-weight: 700; }
     
     .foto-servicio { width: 100%; max-height: 420px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
     .descripcion { font-size: 1.05rem; line-height: 1.6; color: #475569; margin-bottom: 25px; }
     
     .acciones-servicio { display: flex; flex-direction: column; gap: 15px; }
     
-    /* Botón destacado WhatsApp usando tu color corporativo */
-    .btn-presupuesto { background-color: #0D317B !important; color: #ffffff !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; text-align: center; transition: background-color 0.3s; display: inline-block; width: fit-content; box-shadow: 0 4px 6px -1px rgba(13, 49, 123, 0.3); }
+    /* Botones de solicitud de Presupuesto modificados al azul real */
+    .btn-presupuesto { background-color: #0D317B !important; color: #ffffff !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; text-align: center; transition: background-color 0.3s; display: inline-block; width: fit-content; box-shadow: 0 4px 6px -1px rgba(13, 49, 123, 0.3); border: none !important; }
     .btn-presupuesto:hover { background-color: #061b45 !important; }
 
     /* Menús Desplegables de Consultas */
@@ -89,13 +91,21 @@
     details[open] summary::after { content: "➖"; }
     details p { margin: 12px 0 0 0; font-size: 0.95rem; line-height: 1.5; color: #475569; }
 
-    /* ======== SECCIÓN 4: CONTACTO (FOOTER EN #0D317B) ======== */
-    footer { background-color: #0D317B !important; color: #ffffff; text-align: center; padding: 60px 20px; margin-top: 40px; }
+    /* ======== SECCIÓN 4: CONTACTO / FOOTER REAL (FORZADO A #0D317B) ======== */
+    footer, footer * {
+      background-color: #0D317B !important;
+    }
+    footer { 
+      color: #ffffff !important; 
+      text-align: center; 
+      padding: 60px 20px; 
+      margin-top: 40px; 
+    }
     footer h2 { font-size: 2rem; margin: 0 0 25px 0; color: #ffffff !important; font-weight: 700; }
-    .contacto-info { max-width: 600px; margin: 0 auto 30px auto; display: grid; gap: 15px; font-size: 1.05rem; text-align: center; color: #f1f5f9; }
-    footer a { color: #38BDF8 !important; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+    .contacto-info { max-width: 600px; margin: 0 auto 30px auto; display: grid; gap: 15px; font-size: 1.05rem; text-align: center; color: #f1f5f9 !important; }
+    footer a { color: #38BDF8 !important; text-decoration: none; font-weight: 600; transition: color 0.3s; background: transparent !important; }
     footer a:hover { color: #7DD3FC !important; }
-    .horario { font-size: 0.9rem; color: #94a3b8; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+    .horario { font-size: 0.9rem; color: #94a3b8 !important; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
   </style>
 </head>
 <body>
@@ -173,7 +183,7 @@
     
     <div id="det-checkin" class="bloque-detalle">
       <h2>Servicio de Check-in</h2>
-      <img src="1.jpeg" alt="Habitación armada matrimonial para Check-in" class="foto-servicio">
+      <img src="1.jpeg" alt="Habitación armada" class="foto-servicio">
       <p class="descripcion">Nos encargamos de recibir a tus huéspedes con calidez y profesionalismo. Realizamos la entrega de llaves, verificación de identidad, recorrido explicativo de las normas de la casa y recomendaciones locales de Mendoza para asegurar un inicio de estadía excelente.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20solicitar%20un%20presupuesto%20para%20el%20servicio%20de%20Check-in" class="btn-presupuesto">📱 Solicitar Presupuesto Check-in</a>
@@ -186,7 +196,7 @@
 
     <div id="det-checkout" class="bloque-detalle">
       <h2>Servicio de Check-out</h2>
-      <img src="3.jpeg" alt="Habitación doble preparada por Alaska" class="foto-servicio">
+      <img src="3.jpeg" alt="Habitación armada" class="foto-servicio">
       <p class="descripcion">Gestionamos la salida de los huéspedes de forma eficiente. Realizamos la recepción de llaves, control rápido del estado general del inventario, chequeo de artefactos apagados y cierre seguro de la propiedad, reportando cualquier novedad de inmediato al propietario.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20solicitar%20un%20presupuesto%20para%20el%20servicio%20de%20Check-out" class="btn-presupuesto">📱 Solicitar Presupuesto Check-out</a>
@@ -199,7 +209,7 @@
 
     <div id="det-recambio" class="bloque-detalle">
       <h2>Limpieza de Recambio</h2>
-      <img src="2.jpeg" alt="Living comedor reluciente tras limpieza de recambio" class="foto-servicio">
+      <img src="2.jpeg" alt="Sala de estar limpia" class="foto-servicio">
       <p class="descripcion">Limpieza profunda y detallada bajo estándares hoteleros realizada estrictamente en la ventana crítica de tiempo. Reponemos los ambientes, desinfectamos superficies de alto contacto y dejamos el departamento reluciente, garantizando comentarios destacados en limpieza.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20necesito%20cotizar%20una%20Limpieza%20de%20Recambio%20para%20mi%20alquiler%20temporario" class="btn-presupuesto">📱 Solicitar Presupuesto Recambio</a>
@@ -212,7 +222,7 @@
 
     <div id="det-lavanderia" class="bloque-detalle">
       <h2>Lavandería Premium de Blancos</h2>
-      <img src="4.jpeg" alt="Blanco y toallas perfectamente dobladas y perfumadas" class="foto-servicio">
+      <img src="4.jpeg" alt="Blancos doblados" class="foto-servicio">
       <p class="descripcion">Gestión integral de sábanas, toallas y mantelería. Retiramos la ropa blanca usada tras el check-out y entregamos un juego idéntico lavado, planchado y aromatizado profesionalmente, listo para vestir las camas en el mismo día.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20me%20interesa%20contratar%20el%20servicio%20de%20Lavander%C3%ADa%20Premium%20de%20blancos" class="btn-presupuesto">📱 Solicitar Presupuesto Lavandería</a>
@@ -225,7 +235,7 @@
 
     <div id="det-mantenimiento" class="bloque-detalle">
       <h2>Mantenimiento y Asistencia Técnica</h2>
-      <img src="6.jpeg" alt="Revisión de equipamientos de cocina y hogar" class="foto-servicio">
+      <img src="6.jpeg" alt="Cocina impecable" class="foto-servicio">
       <p class="descripcion">Resolución de imprevistos técnicos, cerrajería, plomería y reparaciones eléctricas del hogar. Integramos soluciones inmediatas para que un foco quemado, un enchufe roto o un desperfecto menor no arruine la experiencia del próximo viajero ni cause quejas.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20necesito%20asistencia%20técnica%20o%20mantenimiento%20para%20una%20propiedad" class="btn-presupuesto">📱 Solicitar Presupuesto Mantenimiento</a>
@@ -238,8 +248,8 @@
 
     <div id="det-finalobra" class="bloque-detalle">
       <h2>Limpieza de Final de Obra</h2>
-      <img src="10.jpeg" alt="Terminación brillante y remoción de restos de materiales en baño" class="foto-servicio">
-      <p class="descripcion">Limpieza técnica exhaustiva diseñada para constructoras, desarrolladores o inversores que acaban de terminar una obra o remodelación. Eliminamos por completo restos de pintura, manchas de cemento, polvo de yeso en rieles and aberturas, dejando la propiedad lista para habitar o amoblar.</p>
+      <img src="10.jpeg" alt="Baño reluciente" class="foto-servicio">
+      <p class="descripcion">Limpieza técnica exhaustiva diseñada para constructoras, desarrolladores o inversores que acaban de terminar una obra o remodelación. Eliminamos por completo restos de pintura, manchas de cemento, polvo de yeso en rieles y aberturas, dejando la propiedad lista para habitar o amoblar.</p>
       <div class="acciones-servicio">
         <a href="https://wa.me/5492615579472?text=Hola%20Alaska,%20quiero%20un%20presupuesto%20para%20una%20limpieza%20técnica%20de%20Final%20de%20Obra" class="btn-presupuesto">📱 Solicitar Presupuesto Final de Obra</a>
         <details>
@@ -261,7 +271,7 @@
     </div>
     <div class="horario">
       <p>Alaska Servicios Integrales © 2026 — Operatividad Profesional para Alquileres Temporarios</p>
-      <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">Horario de Coordinación General: Lunes a Sábados de 08:00 hs a 20:00 hs</p>
+      <p style="font-size: 0.8rem; color: #94a3b8 !important; margin-top: 5px;">Horario de Coordinación General: Lunes a Sábados de 08:00 hs a 20:00 hs</p>
     </div>
   </footer>
 
